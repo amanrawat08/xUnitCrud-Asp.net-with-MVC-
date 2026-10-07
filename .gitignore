@@ -1,0 +1,26 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+
+# VS Code
+.vscode/
+
+# Test results
+TestResults/
+
+# NuGet
+*.nupkg
+*.snupkg
+
+# ASP.NET Core
+appsettings.*.json
+
+# OS files
+.DS_Store
+Thumbs.db
