@@ -11,7 +11,7 @@ public class CountriesServiceTest
     private readonly ICountriesService _countriesService;
     public CountriesServiceTest()
     {
-        _countriesService = new CountriesService();
+        _countriesService = new CountriesService(false);
 
     }
     #region Add Country
@@ -74,6 +74,7 @@ public class CountriesServiceTest
         {
             CountryName = "Japan"
         };
+        
         //Act
         CountryResponse response = _countriesService.AddCountry(request);
 

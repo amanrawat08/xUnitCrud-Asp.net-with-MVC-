@@ -12,6 +12,7 @@ public class Person
     public DateTime? BirthOfDate{get;set;} 
     public String? Gender{get;set;} 
     public Guid? CountryID{get;set;} 
+    public String? CountryName{get;set;} 
     public String? Address{get;set;} 
     public bool? RecieveNewsLetter{get;set;} 
 }
