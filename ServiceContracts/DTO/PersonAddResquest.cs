@@ -12,9 +12,11 @@ public class PersonAddResquest
 
     [Required(ErrorMessage = "Must enter Email Address")]
     [EmailAddress(ErrorMessage = "Email Address Should Valid")]
+    [DataType(DataType.EmailAddress)]
     public String? Email { get; set; }
     [Required(ErrorMessage = "Must Enter Person Name")]
     public String? PersonName { get; set; }
+    [DataType(DataType.Date)]
     public DateTime? BirthOfDate { get; set; }
     public GenderOptions? Gender { get; set; }
     public Guid? CountryID { get; set; }

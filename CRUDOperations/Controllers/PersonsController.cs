@@ -1,5 +1,6 @@
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -52,7 +53,8 @@ namespace CRUDExample.Controllers
         public IActionResult Create()
         {
             List<CountryResponse> allCountries = _countriesService.GetAllCountries();
-            ViewBag.Countries = allCountries;
+            ViewBag.Countries = allCountries.Select(temp =>new SelectListItem(){Text=temp.CountryName , Value = temp.CountryID.ToString()}
+            ); 
             return View();
         }
         [Route("[action]")]
