@@ -18,7 +18,9 @@ public class PersonAddResquest
     public String? PersonName { get; set; }
     [DataType(DataType.Date)]
     public DateTime? BirthOfDate { get; set; }
+    [Required(ErrorMessage ="Please Select the Gender")]
     public GenderOptions? Gender { get; set; }
+    [Required(ErrorMessage ="Please Select Country")]
     public Guid? CountryID { get; set; }
     public String? Address { get; set; }
     public bool? RecieveNewsLetter { get; set; }

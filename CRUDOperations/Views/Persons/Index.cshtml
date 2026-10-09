@@ -104,6 +104,10 @@
                     <td>@person.CountryName</td>
                     <td>@person.Address</td>
                     <td>@person.RecieveNewsLetter</td>
+                    <td>
+                        <a asp-controller="Persons" asp-action="Edit" asp-route-personID="@person.PersonID">Edit</a>
+                        @* person/edit/1212121 *@
+                    </td>
                 </tr>
             
             }
