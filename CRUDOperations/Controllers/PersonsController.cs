@@ -93,7 +93,7 @@ namespace CRUDExample.Controllers
         [Route("[action]/{personID}")]
         public IActionResult Edit(PersonUpdateRequest personUpdateRequest)
         {
-            PersonResponse? personResponse =  _personService.GetPersonDetailByID(personUpdateRequest.PersonID);
+            PersonResponse? personResponse = _personService.GetPersonDetailByID(personUpdateRequest.PersonID);
             if (personResponse == null)
             {
                 return RedirectToAction("Index");
@@ -108,8 +108,29 @@ namespace CRUDExample.Controllers
                 List<CountryResponse> allCountries = _countriesService.GetAllCountries();
                 ViewBag.Countries = allCountries;
                 ViewBag.Errors = ModelState.Values.SelectMany((e) => e.Errors).Select((e) => e.ErrorMessage).ToList();
-                return View();
+                return View(personResponse.ToPersonUpdateRequest());
             }
         }
+
+        [HttpGet]
+        [Route("[action]/{personID}")]
+        public IActionResult Delete(Guid personID)
+        {
+            PersonResponse? personResponse = _personService.GetPersonDetailByID(personID);
+            if (personResponse == null) return RedirectToAction("Index");
+
+            return View(personResponse);
+        }
+        [HttpPost]
+        [Route("[action]/{personID}")]
+        public IActionResult Delete(PersonUpdateRequest personUpdateRequest)
+        {
+            PersonResponse? personResponse = _personService.GetPersonDetailByID(personUpdateRequest.PersonID);
+            if (personResponse == null) return RedirectToAction("Index");
+
+            _personService.DeletePerson(personUpdateRequest.PersonID);
+            return RedirectToAction("Index");
+        }
+
     }
 }
