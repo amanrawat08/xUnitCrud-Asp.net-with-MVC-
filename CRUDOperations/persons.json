@@ -1,0 +1,167 @@
+[
+  {
+    "PersonID": "b1a2c3d4-0001-4e5f-8a9b-1c2d3e4f5a01",
+    "Email": "aarav.sharma@example.com",
+    "PersonName": "Aarav Sharma",
+    "BirthOfDate": "1992-04-18T00:00:00",
+    "Gender": "Male",
+    "CountryID": "3f2a9c1e-7b4d-4e8a-9a61-1c5d2e8f0a01",
+    "CountryName": "India",
+    "Address": "12 MG Road, Connaught Place, New Delhi 110001",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0002-4e5f-8a9b-1c2d3e4f5a02",
+    "Email": "priya.nair@example.com",
+    "PersonName": "Priya Nair",
+    "BirthOfDate": "1995-09-02T00:00:00",
+    "Gender": "Female",
+    "CountryID": "3f2a9c1e-7b4d-4e8a-9a61-1c5d2e8f0a01",
+    "CountryName": "India",
+    "Address": "48 Marine Drive, Kochi, Kerala 682001",
+    "RecieveNewsLetter": false
+  },
+  {
+    "PersonID": "b1a2c3d4-0003-4e5f-8a9b-1c2d3e4f5a03",
+    "Email": "john.miller@example.com",
+    "PersonName": "John Miller",
+    "BirthOfDate": "1988-01-27T00:00:00",
+    "Gender": "Male",
+    "CountryID": "8b7d4e52-2c19-4f3a-b6d8-5a90e1c47b02",
+    "CountryName": "United States",
+    "Address": "221 Maple Street, Austin, TX 73301",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0004-4e5f-8a9b-1c2d3e4f5a04",
+    "Email": "emily.davis@example.com",
+    "PersonName": "Emily Davis",
+    "BirthOfDate": "1990-11-12T00:00:00",
+    "Gender": "Female",
+    "CountryID": "8b7d4e52-2c19-4f3a-b6d8-5a90e1c47b02",
+    "CountryName": "United States",
+    "Address": "75 Lakeview Ave, Chicago, IL 60601",
+    "RecieveNewsLetter": false
+  },
+  {
+    "PersonID": "b1a2c3d4-0005-4e5f-8a9b-1c2d3e4f5a05",
+    "Email": "oliver.smith@example.com",
+    "PersonName": "Oliver Smith",
+    "BirthOfDate": "1985-06-30T00:00:00",
+    "Gender": "Male",
+    "CountryID": "c41e6a0d-9f38-4d27-8e5b-72a3b9d10c03",
+    "CountryName": "United Kingdom",
+    "Address": "9 Baker Street, London NW1 6XE",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0006-4e5f-8a9b-1c2d3e4f5a06",
+    "Email": "sophie.taylor@example.com",
+    "PersonName": "Sophie Taylor",
+    "BirthOfDate": "1998-03-08T00:00:00",
+    "Gender": "Female",
+    "CountryID": "c41e6a0d-9f38-4d27-8e5b-72a3b9d10c03",
+    "CountryName": "United Kingdom",
+    "Address": "34 Princes Street, Edinburgh EH2 2AN",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0007-4e5f-8a9b-1c2d3e4f5a07",
+    "Email": "liam.tremblay@example.com",
+    "PersonName": "Liam Tremblay",
+    "BirthOfDate": "1993-08-21T00:00:00",
+    "Gender": "Male",
+    "CountryID": "5d92f7b3-a6c4-4108-93ef-0b8d6e2a5d04",
+    "CountryName": "Canada",
+    "Address": "560 Rue Sherbrooke O, Montreal, QC H3A 1B9",
+    "RecieveNewsLetter": false
+  },
+  {
+    "PersonID": "b1a2c3d4-0008-4e5f-8a9b-1c2d3e4f5a08",
+    "Email": "chloe.wilson@example.com",
+    "PersonName": "Chloe Wilson",
+    "BirthOfDate": "1991-12-05T00:00:00",
+    "Gender": "Female",
+    "CountryID": "e07a3c68-1d5f-4b92-a4c7-93f1d8b06e05",
+    "CountryName": "Australia",
+    "Address": "18 George Street, Sydney NSW 2000",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0009-4e5f-8a9b-1c2d3e4f5a09",
+    "Email": "lukas.weber@example.com",
+    "PersonName": "Lukas Weber",
+    "BirthOfDate": "1987-02-14T00:00:00",
+    "Gender": "Male",
+    "CountryID": "12b8d5f4-6e03-47a9-b1d2-c4e7a9305f06",
+    "CountryName": "Germany",
+    "Address": "Friedrichstrasse 101, 10117 Berlin",
+    "RecieveNewsLetter": false
+  },
+  {
+    "PersonID": "b1a2c3d4-0010-4e5f-8a9b-1c2d3e4f5a10",
+    "Email": "camille.dubois@example.com",
+    "PersonName": "Camille Dubois",
+    "BirthOfDate": "1996-07-19T00:00:00",
+    "Gender": "Female",
+    "CountryID": "a9c3e1d7-4b82-4f60-8d15-6e0b27c9a107",
+    "CountryName": "France",
+    "Address": "27 Rue de Rivoli, 75004 Paris",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0011-4e5f-8a9b-1c2d3e4f5a11",
+    "Email": "haruto.tanaka@example.com",
+    "PersonName": "Haruto Tanaka",
+    "BirthOfDate": "1994-10-03T00:00:00",
+    "Gender": "Male",
+    "CountryID": "6f1d8a2b-c3e5-4970-a2b4-18d9f5e3c708",
+    "CountryName": "Japan",
+    "Address": "3-5-1 Shibuya, Shibuya-ku, Tokyo 150-0002",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0012-4e5f-8a9b-1c2d3e4f5a12",
+    "Email": "sakura.ito@example.com",
+    "PersonName": "Sakura Ito",
+    "BirthOfDate": "2000-05-25T00:00:00",
+    "Gender": "Female",
+    "CountryID": "6f1d8a2b-c3e5-4970-a2b4-18d9f5e3c708",
+    "CountryName": "Japan",
+    "Address": "1-2-3 Namba, Chuo-ku, Osaka 542-0076",
+    "RecieveNewsLetter": false
+  },
+  {
+    "PersonID": "b1a2c3d4-0013-4e5f-8a9b-1c2d3e4f5a13",
+    "Email": "mateus.silva@example.com",
+    "PersonName": "Mateus Silva",
+    "BirthOfDate": "1989-09-16T00:00:00",
+    "Gender": "Male",
+    "CountryID": "d3e5b7a9-0f21-4c86-9b3d-a7c1e48f2d09",
+    "CountryName": "Brazil",
+    "Address": "Av. Paulista 1578, Sao Paulo, SP 01310-200",
+    "RecieveNewsLetter": true
+  },
+  {
+    "PersonID": "b1a2c3d4-0014-4e5f-8a9b-1c2d3e4f5a14",
+    "Email": "wei.tan@example.com",
+    "PersonName": "Wei Tan",
+    "BirthOfDate": "1992-01-09T00:00:00",
+    "Gender": "Other",
+    "CountryID": "94a0c6e2-8d7b-4153-bf6a-3e2d1c9b5a10",
+    "CountryName": "Singapore",
+    "Address": "10 Orchard Road, #05-12, Singapore 238888",
+    "RecieveNewsLetter": false
+  },
+  {
+    "PersonID": "b1a2c3d4-0015-4e5f-8a9b-1c2d3e4f5a15",
+    "Email": null,
+    "PersonName": "Ananya Iyer",
+    "BirthOfDate": null,
+    "Gender": "Female",
+    "CountryID": "3f2a9c1e-7b4d-4e8a-9a61-1c5d2e8f0a01",
+    "CountryName": "India",
+    "Address": null,
+    "RecieveNewsLetter": null
+  }
+]

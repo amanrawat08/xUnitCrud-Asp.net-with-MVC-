@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/CRUDOperations/">
+    <Project Path="CRUDOperations/CRUDExample.csproj" />
+  </Folder>
+  <Project Path="CRUDTests/CRUDTests.csproj" />
+  <Project Path="Entities/Entities.csproj" />
+  <Project Path="ServiceContracts/ServiceContracts.csproj" />
+  <Project Path="Services/Services.csproj" />
+</Solution>

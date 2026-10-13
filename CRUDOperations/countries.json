@@ -1,0 +1,12 @@
+[
+  { "CountryID": "3f2a9c1e-7b4d-4e8a-9a61-1c5d2e8f0a01", "CountryName": "India" },
+  { "CountryID": "8b7d4e52-2c19-4f3a-b6d8-5a90e1c47b02", "CountryName": "United States" },
+  { "CountryID": "c41e6a0d-9f38-4d27-8e5b-72a3b9d10c03", "CountryName": "United Kingdom" },
+  { "CountryID": "5d92f7b3-a6c4-4108-93ef-0b8d6e2a5d04", "CountryName": "Canada" },
+  { "CountryID": "e07a3c68-1d5f-4b92-a4c7-93f1d8b06e05", "CountryName": "Australia" },
+  { "CountryID": "12b8d5f4-6e03-47a9-b1d2-c4e7a9305f06", "CountryName": "Germany" },
+  { "CountryID": "a9c3e1d7-4b82-4f60-8d15-6e0b27c9a107", "CountryName": "France" },
+  { "CountryID": "6f1d8a2b-c3e5-4970-a2b4-18d9f5e3c708", "CountryName": "Japan" },
+  { "CountryID": "d3e5b7a9-0f21-4c86-9b3d-a7c1e48f2d09", "CountryName": "Brazil" },
+  { "CountryID": "94a0c6e2-8d7b-4153-bf6a-3e2d1c9b5a10", "CountryName": "Singapore" }
+]

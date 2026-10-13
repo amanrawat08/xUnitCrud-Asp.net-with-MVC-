@@ -10,123 +10,13 @@ namespace Services;
 
 public class PersonService : IPersonService
 {
-    private readonly List<Person>? _personList;
+    private readonly PersonsDbContext _db;
     private readonly ICountriesService _countriesService;
-    public PersonService(bool initiaze = true)
+    public PersonService(PersonsDbContext personsDbContext, ICountriesService countriesService)
     {
-        _personList = new List<Person>();
-        _countriesService = new CountriesService();
-        if (initiaze)
-        {
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Zeb",
-                Address = "Suite 100",
-                Email = "zkirckman1@a8.net",
-                BirthOfDate = Convert.ToDateTime("2004-07-09"),
-                Gender = "Male",
-                RecieveNewsLetter = true,
-                CountryID=Guid.Parse("bd9f45ca-5b91-474b-bbe8-e0fc6733ea52")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Noellyn",
-                Address = "Apt 38",
-                Email = "nhaddy2@uiuc.edu",
-                BirthOfDate = Convert.ToDateTime("2001-03-26"),
-                Gender = "Female",
-                RecieveNewsLetter = false,
-                CountryID=Guid.Parse("19c5e843-4a90-4e35-b3e2-acae4390d53a")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Robenia",
-                Address = "5th Floor",
-                Email = "rbedham3@instagram.com",
-                BirthOfDate = Convert.ToDateTime("2002-08-29"),
-                Gender = "Female",
-                RecieveNewsLetter = false,
-                CountryID=Guid.Parse("6fc237ee-fac4-47be-98ab-ea83b5f11364")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Angelia",
-                Address = "17th Floor",
-                Email = "abarnewall4@forbes.com",
-                BirthOfDate = Convert.ToDateTime("2003-05-05"),
-                Gender = "Female",
-                RecieveNewsLetter = false,
-                CountryID=Guid.Parse("d775b3ec-f294-4edd-9855-9d3872f9cd75")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Edin",
-                Address = "PO Box 30800",
-                Email = "emeigh5@rediff.com",
-                BirthOfDate = Convert.ToDateTime("2004-02-25"),
-                Gender = "Female",
-                RecieveNewsLetter = true,
-                CountryID=Guid.Parse("23c25a89-a1ac-48ba-a999-ca9fc532919d")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Dar",
-                Address = "PO Box 78677",
-                Email = "daiskrigg6@biblegateway.com",
-                BirthOfDate = Convert.ToDateTime("2004-09-02"),
-                Gender = "Male",
-                RecieveNewsLetter = false,
-                CountryID=Guid.Parse("19c5e843-4a90-4e35-b3e2-acae4390d53a")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Daune",
-                Address = "11th Floor",
-                Email = "drichardson7@posterous.com",
-                BirthOfDate = Convert.ToDateTime("2002-10-16"),
-                Gender = "Female",
-                RecieveNewsLetter = false,
-                CountryID=Guid.Parse("bd9f45ca-5b91-474b-bbe8-e0fc6733ea52")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Levi",
-                Address = "PO Box 44931",
-                Email = "lkettell8@cbsnews.com",
-                BirthOfDate = Convert.ToDateTime("2000-12-14"),
-                Gender = "Male",
-                RecieveNewsLetter = true,
-                CountryID=Guid.Parse("c4d34a2f-6b81-49c4-9828-f437ac751ba0")
-            });
-
-            _personList.Add(new Person()
-            {
-                PersonID = Guid.NewGuid(),
-                PersonName = "Drusilla",
-                Address = "PO Box 74515",
-                Email = "dtesseyman9@forbes.com",
-                BirthOfDate = Convert.ToDateTime("2003-02-21"),
-                Gender = "Female",
-                RecieveNewsLetter = true,
-                CountryID=Guid.Parse("6fc237ee-fac4-47be-98ab-ea83b5f11364")
-            });
-        }
-    }
+        _db = personsDbContext;
+        _countriesService = countriesService;
+       }
     private PersonResponse ConvertPersonIntoPersonObject(Person person)
     {
         PersonResponse personResponse = person.ToPersonResponse();
@@ -150,8 +40,10 @@ public class PersonService : IPersonService
         // Generate new guid;
         person.PersonID = Guid.NewGuid();
 
-        // Add person 
-        _personList.Add(person);
+        // Add person to dataset
+        _db.Persons.Add(person);
+        // Add into persons database
+        _db.SaveChanges();
 
         // Convert the person list to person  obje type
         return ConvertPersonIntoPersonObject(person);
@@ -160,13 +52,13 @@ public class PersonService : IPersonService
 
     public List<PersonResponse> GetAllPersonList()
     {
-        return _personList.Select((person) => ConvertPersonIntoPersonObject(person)).ToList();
+        return _db.Persons.ToList().Select((person) => ConvertPersonIntoPersonObject(person)).ToList();
     }
 
     public PersonResponse? GetPersonDetailByID(Guid? personID)
     {
         if (personID == null) return null;
-        Person? person = _personList.FirstOrDefault((person) => person.PersonID == personID);
+        Person? person = _db.Persons.FirstOrDefault((person) => person.PersonID == personID);
         if (person == null) return null;
 
         return ConvertPersonIntoPersonObject(person);
@@ -175,7 +67,6 @@ public class PersonService : IPersonService
     public List<PersonResponse> GetFilterPersons(string? searchBy, string? searchString)
     {
         List<PersonResponse> allPerson = GetAllPersonList();
-
         List<PersonResponse> filterPersons = allPerson;
 
         if (string.IsNullOrEmpty(searchBy) || string.IsNullOrEmpty(searchString)) return filterPersons;
@@ -251,7 +142,7 @@ public class PersonService : IPersonService
         // Get matching person object
         List<PersonResponse> allPerson = GetAllPersonList();
 
-        Person? personResponse_Find = _personList.FirstOrDefault((temp) => temp.PersonID == personUpdateRequest.PersonID);
+        Person? personResponse_Find = _db.Persons.FirstOrDefault((temp) => temp.PersonID == personUpdateRequest.PersonID);
 
         if (personResponse_Find == null) throw new ArgumentException("No User found");
         // Update all the details
@@ -262,6 +153,8 @@ public class PersonService : IPersonService
         personResponse_Find.Gender = personUpdateRequest.Gender.ToString();
         personResponse_Find.CountryID = personUpdateRequest.CountryID;
         personResponse_Find.BirthOfDate = personUpdateRequest.BirthOfDate;
+
+        _db.SaveChanges();
 
         return ConvertPersonIntoPersonObject(personResponse_Find);
 
@@ -274,12 +167,16 @@ public class PersonService : IPersonService
         // Get matching person object
         List<PersonResponse> allPerson = GetAllPersonList();
 
-        Person? personResponse_Find = _personList.FirstOrDefault((temp) => temp.PersonID == personID);
+        Person? personResponse_Find = _db.Persons.FirstOrDefault((temp) => temp.PersonID == personID);
 
         if (personResponse_Find == null) return false;
 
-        _personList.RemoveAll((temp) => temp.PersonID == personID);
-
+        _db.Persons.Remove(
+            _db.Persons.First(
+                (temp) => temp.PersonID == personID
+                )
+            );
+        _db.SaveChanges();
         return true;
 
     }
